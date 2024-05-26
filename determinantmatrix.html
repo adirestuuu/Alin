@@ -34,7 +34,7 @@
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=87e54e7c" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
@@ -57,6 +57,8 @@
     <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'determinantmatrix';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -434,6 +436,7 @@ document.write(`
 <span class="n">h</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span> <span class="p">(([</span><span class="mi">6</span><span class="p">,</span><span class="mi">8</span><span class="p">],[</span><span class="mi">4</span><span class="p">,</span><span class="mi">2</span><span class="p">]))</span>
 <span class="n">i</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span> <span class="p">(([</span><span class="mi">6</span><span class="p">,</span><span class="mi">8</span><span class="p">],[</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">]))</span>
 <span class="n">j</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span> <span class="p">(([</span><span class="mi">6</span><span class="p">,</span><span class="mi">4</span><span class="p">],[</span><span class="mi">4</span><span class="p">,</span><span class="mi">1</span><span class="p">]))</span>
+<span class="n">k</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(([[</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">],[</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">],[</span><span class="mi">4</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">]]))</span>
 
 
 <span class="n">det_a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">det</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
@@ -446,6 +449,8 @@ document.write(`
 <span class="n">det_h</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">det</span><span class="p">(</span><span class="n">h</span><span class="p">)</span>
 <span class="n">det_i</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">det</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
 <span class="n">det_j</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">det</span><span class="p">(</span><span class="n">j</span><span class="p">)</span>
+<span class="n">det_k</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">det</span><span class="p">(</span><span class="n">k</span><span class="p">)</span>
+
 
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Matriks A = &#39;</span><span class="p">,</span><span class="n">a</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Matriks B = &#39;</span><span class="p">,</span><span class="n">b</span><span class="p">)</span>
@@ -458,6 +463,8 @@ document.write(`
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Matriks I = &#39;</span><span class="p">,</span><span class="n">i</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Matriks J = &#39;</span><span class="p">,</span><span class="n">j</span><span class="p">)</span>
 
+
+
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Determinant A = &#39;</span><span class="p">,</span><span class="n">det_a</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Determinant B = &#39;</span><span class="p">,</span><span class="n">det_b</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Determinant C = &#39;</span><span class="p">,</span><span class="n">det_c</span><span class="p">)</span>
@@ -468,6 +475,7 @@ document.write(`
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Determinant H = &#39;</span><span class="p">,</span><span class="n">det_h</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Determinant I = &#39;</span><span class="p">,</span><span class="n">det_i</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Determinant J = &#39;</span><span class="p">,</span><span class="n">det_j</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Determinant K = &#39;</span><span class="p">,</span><span class="n">det_k</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -508,6 +516,91 @@ Determinant G =  4.000000000000005
 Determinant H =  -19.999999999999996
 Determinant I =  -9.999999999999998
 Determinant J =  -9.999999999999998
+Determinant K =  -2.9999999999999996
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>COFACTOR</strong></p>
+<p>Dalam matriks, kofaktor adalah determinan matriks yang diperoleh dengan menghilangkan baris dan kolom tempat elemen tersebut berada.  Nilai kofaktor ditentukan oleh posisi elemen, dengan perkalian +1 atau -1.  Setiap elemen dalam matriks memiliki kofaktor yang terkait.  Misalnya, kofaktor elemen pada posisi (1,1) didapatkan dengan menghilangkan baris ke-1 dan kolom ke-1, kemudian menghitung determinan matriks yang tersisa.</p>
+<p><strong>Menghitung Invers Matriks 5x5 dengan Kofaktor</strong></p>
+<p>Berikut adalah Matriks 5x5</p>
+<p><span class="math notranslate nohighlight">\(
+\begin{align*}
+S=
+\begin{bmatrix}
+1&amp;1&amp;2&amp;3&amp;1\\
+1&amp;3&amp;2&amp;2&amp;3\\
+1&amp;1&amp;1&amp;1&amp;2\\
+2&amp;4&amp;2&amp;3&amp;2\\
+2&amp;2&amp;3&amp;3&amp;1
+\end{bmatrix}
+\end{align*}
+\)</span></p>
+<p><strong>Mencari Matriks Invers</strong></p>
+<p>Rumus</p>
+<ul class="simple">
+<li><p>Kofaktor = <span class="math notranslate nohighlight">\(C_{ij} = (-1)^{i+j} * detS\)</span></p></li>
+<li><p>DET = <span class="math notranslate nohighlight">\(a_{ij} * c_{ij} + a_{ij} * c_{ij} + a_{ij} * c_{ij} + a_{nn} * c_{nn}\)</span></p></li>
+<li><p>Invers Matriks = <span class="math notranslate nohighlight">\({ \frac{1}{detS}} * adj(S)\)</span></p></li>
+<li><p>Cari Adjoin = <span class="math notranslate nohighlight">\(adj(S) = (kof(A))^T\)</span></p></li>
+<li><p>(adj(S) = Transpose dari tiap Kofaktor Matriks</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>  <span class="c1"># Kita akan menggunakan library NumPy untuk perhitungan matriks</span>
+
+<span class="c1"># Inisialisasi matriks S</span>
+<span class="n">S</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span>
+    <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+<span class="p">])</span>
+
+<span class="c1"># Fungsi untuk menghitung determinan matriks (hanya untuk matriks 2x2)</span>
+<span class="k">def</span> <span class="nf">det2x2</span><span class="p">(</span><span class="n">matrix</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">matrix</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">matrix</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">matrix</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="n">matrix</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+
+<span class="c1"># Fungsi untuk menghitung kofaktor</span>
+<span class="k">def</span> <span class="nf">kofaktor</span><span class="p">(</span><span class="n">matrix</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">):</span>
+    <span class="n">submatrix</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="n">matrix</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">),</span> <span class="n">j</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>  <span class="c1"># Hapus baris i dan kolom j</span>
+    <span class="k">return</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="n">j</span><span class="p">)</span> <span class="o">*</span> <span class="n">det2x2</span><span class="p">(</span><span class="n">submatrix</span><span class="p">)</span>
+
+<span class="c1"># Fungsi untuk menghitung determinan matriks 5x5</span>
+<span class="k">def</span> <span class="nf">det5x5</span><span class="p">(</span><span class="n">matrix</span><span class="p">):</span>
+    <span class="n">det</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+        <span class="n">det</span> <span class="o">+=</span> <span class="n">matrix</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span> <span class="o">*</span> <span class="n">kofaktor</span><span class="p">(</span><span class="n">matrix</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">j</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">det</span>
+
+<span class="c1"># Fungsi untuk menghitung adjoin matriks</span>
+<span class="k">def</span> <span class="nf">adjoin</span><span class="p">(</span><span class="n">matrix</span><span class="p">):</span>
+    <span class="n">adj</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+            <span class="n">adj</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">kofaktor</span><span class="p">(</span><span class="n">matrix</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span>  <span class="c1"># Perhatikan penukaran indeks i dan j</span>
+    <span class="k">return</span> <span class="n">adj</span>
+
+<span class="c1"># Hitung determinan dan invers</span>
+<span class="n">det_S</span> <span class="o">=</span> <span class="n">det5x5</span><span class="p">(</span><span class="n">S</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">det_S</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="n">inv_S</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="n">det_S</span><span class="p">)</span> <span class="o">*</span> <span class="n">adjoin</span><span class="p">(</span><span class="n">S</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Invers matriks S:&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">inv_S</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Matriks S tidak memiliki invers (determinan nol)&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Invers matriks S:
+[[ 0.5  0.5 -2.   2.  -2. ]
+ [ 0.5 -0.5  0.   0.   0. ]
+ [-1.   0.   1.  -1.   1. ]
+ [ 1.   0.  -1.   1.  -1. ]
+ [-1.   0.   1.  -1.   1. ]]
 </pre></div>
 </div>
 </div>
